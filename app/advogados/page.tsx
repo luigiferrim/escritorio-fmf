@@ -15,6 +15,7 @@ export default function AdvogadosPage() {
       experiencia: 25,
       bio: "Advogada com 25 anos de atuação, Janaina Ferri Maines é sócia fundadora do escritório Ferri, Maines & Fernandes Advogados Associados. Especialista em Direito do Trabalho com foco na atuação patronal, tem vasta experiência na assessoria jurídica preventiva e contenciosa para empresas de diversos setores. Foi Vice-Presidente da OAB – Subseção de Lages no triênio 2013-2015 e Conselheira Estadual da OAB/SC no período de 2019-2021. Reconhecida pela sua postura ética, técnica e estratégica, dedica-se à promoção de soluções jurídicas eficientes para empregadores.",
       oab: "OAB/SC 14.868",
+      whatsapp: "5549984123137",
     },
     {
       id: 2,
@@ -25,6 +26,7 @@ export default function AdvogadosPage() {
       experiencia: 30,
       bio: "Advogado com mais de três décadas de experiência, Rafael Maines é sócio fundador do Ferri, Maines & Fernandes Advogados Associados. Graduado pela Pontifícia Universidade Católica do Rio Grande do Sul (PUC-RS) e pela UNIPLAC, construiu uma carreira sólida nas áreas do Direito Civil e Direito Médico. Atua há mais de 20 anos na defesa de médicos, profissionais da saúde e clínicas, com amplo reconhecimento pela excelência técnica e comprometimento com a ética profissional.",
       oab: "OAB/SC 9.118",
+      whatsapp: "5549984123389",
     },
     {
       id: 3,
@@ -35,6 +37,7 @@ export default function AdvogadosPage() {
       experiencia: 25,
       bio: "Sócia fundadora do escritório Ferri, Maines & Fernandes Advogados Associados, Roberta Dalva Costa Vergutz Fernandes é advogada desde 1999, com ênfase em Direito de Família, Sucessões e Direito Civil. Também atua com excelência nas áreas de Direito Militar e Penal. Possui especialização em Direito Penal e é reconhecida pela abordagem humanizada e estratégica em causas complexas. Sua trajetória é marcada pelo comprometimento com a justiça e pela busca constante por soluções jurídicas eficazes e responsáveis.",
       oab: "OAB/SC 14.869",
+      whatsapp: "5549984123271",
     },
   ];
 
@@ -111,7 +114,15 @@ export default function AdvogadosPage() {
                     <p className="text-muted-foreground">{advogado.bio}</p>
                   </div>
 
-                  <Button className="flex items-center gap-2">
+                  <Button
+                    className="flex items-center gap-2"
+                    onClick={() =>
+                      window.open(
+                        `https://wa.me/${advogado.whatsapp}`,
+                        "_blank"
+                      )
+                    }
+                  >
                     <MessageCircle size={18} />
                     <span>Fale conosco no WhatsApp</span>
                   </Button>
