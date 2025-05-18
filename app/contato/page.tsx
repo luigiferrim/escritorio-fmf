@@ -1,7 +1,6 @@
 "use client";
 
 import type React from "react";
-
 import { useState } from "react";
 import Image from "next/image";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
@@ -45,17 +44,27 @@ export default function ContatoPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      await fetch("https://formspree.io/f/xqaqnjpd", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      setSubmitSuccess(true);
+      setFormData({
+        nome: "",
+        email: "",
+        telefone: "",
+        assunto: "",
+        mensagem: "",
+      });
+    } catch (error) {
+      console.error("Erro ao enviar formulário:", error);
+      alert("Ocorreu um erro ao enviar. Tente novamente.");
+    }
 
     setIsSubmitting(false);
-    setSubmitSuccess(true);
-    setFormData({
-      nome: "",
-      email: "",
-      telefone: "",
-      assunto: "",
-      mensagem: "",
-    });
 
     setTimeout(() => {
       setSubmitSuccess(false);
