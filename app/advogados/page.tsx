@@ -147,7 +147,7 @@ export default function AdvogadosPage() {
               jurídicas com excelência e dedicação.
             </p>
             <Button asChild size="lg">
-              <Link href="/contato">Agende uma Consulta</Link>
+              <Link href="/contato">Solicite seu atendimento</Link>
             </Button>
           </div>
         </div>
