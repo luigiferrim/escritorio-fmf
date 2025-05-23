@@ -32,7 +32,7 @@ export default function AdvogadosPage() {
     },
     {
       id: 3,
-      nome: "Dra. Roberta Dalva Costa Vergutz Fernandes",
+      nome: "Dra. Roberta Costa Fernandes",
       foto: "/roberta.jpg",
       cargo: "Sócia Fundadora",
       area: "Direito de Família, Sucessões, Civil, Militar e Penal",

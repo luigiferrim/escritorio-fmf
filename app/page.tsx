@@ -126,7 +126,7 @@ export default function Home() {
                 image: "/rafael.jpg",
               },
               {
-                name: "Dra. Roberta Dalva Fernandes",
+                name: "Dra. Roberta Costa Fernandes",
                 role: "Direito de Família, Civil, Penal e Militar",
                 image: "/roberta.jpg",
               },
