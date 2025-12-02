@@ -45,20 +45,26 @@ export default function ContatoPage() {
     setIsSubmitting(true);
 
     try {
-      await fetch("https://formspree.io/f/xqaqnjpd", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      setSubmitSuccess(true);
-      setFormData({
-        nome: "",
-        email: "",
-        telefone: "",
-        assunto: "",
-        mensagem: "",
-      });
+      const data = await res.json();
+      if (!res.ok || data?.error) {
+        console.error("Erro ao enviar formulário:", data?.error || data);
+        alert("Ocorreu um erro ao enviar. Tente novamente.");
+      } else {
+        setSubmitSuccess(true);
+        setFormData({
+          nome: "",
+          email: "",
+          telefone: "",
+          assunto: "",
+          mensagem: "",
+        });
+      }
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
       alert("Ocorreu um erro ao enviar. Tente novamente.");

@@ -118,12 +118,16 @@ export default function AdvogadosPage() {
 
                   <Button
                     className="flex items-center gap-2"
-                    onClick={() =>
-                      window.open(
-                        `https://wa.me/${advogado.whatsapp}`,
-                        "_blank"
-                      )
-                    }
+                    onClick={() => {
+                      const url = `https://wa.me/${advogado.whatsapp}`;
+                      const a = document.createElement("a");
+                      a.href = url;
+                      a.target = "_blank";
+                      a.rel = "noopener noreferrer";
+                      document.body.appendChild(a);
+                      a.click();
+                      a.remove();
+                    }}
                   >
                     <MessageCircle size={18} />
                     <span>Fale conosco no WhatsApp</span>

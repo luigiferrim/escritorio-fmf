@@ -42,3 +42,32 @@ Este projeto foi criado com tecnologias modernas para apresentar a equipe, área
 ```bash
 git clone https://github.com/seu-usuario/escritorio-advocacia.git
 ```
+
+---
+
+## 🔒 Ambiente e Segurança
+
+- Variáveis de ambiente (crie um arquivo `.env.local` na raiz do projeto ou configure no provedor de hospedagem):
+
+  - `FORMSPREE_ENDPOINT` — (opcional) URL do endpoint do Formspree. Se não definido, o endpoint padrão é usado internamente.
+  - `RECAPTCHA_SECRET` — (opcional) chave secreta do reCAPTCHA para verificação server-side (se ativado).
+
+- O projeto aplica headers de segurança (CSP, HSTS, X-Frame-Options, etc.) via `next.config.mjs`.
+
+## 🧪 Testes locais
+
+1. Instale dependências:
+
+```bash
+pnpm install
+```
+
+2. Rode em modo de desenvolvimento:
+
+```bash
+pnpm dev
+```
+
+3. Teste o formulário de contato na página `/contato`. O formulário agora envia os dados para `/api/contact`, que valida e encaminha ao Formspree.
+
+Se quiser ativar verificação reCAPTCHA, defina `RECAPTCHA_SECRET` e atualize o formulário no cliente para incluir o token (podemos adicionar essa etapa se desejar).

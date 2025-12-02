@@ -1,15 +1,25 @@
-"use client"
+"use client";
 
-import { MessageCircle } from "lucide-react"
+import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "5549984123389" // Número real do escritório
-  const message = "Olá, gostaria de agendar uma consulta com o escritório Ferri, Maines & Fernandes."
+  const phoneNumber = "5549984123389"; // Número real do escritório
+  const message =
+    "Olá, gostaria de agendar uma consulta com o escritório Ferri, Maines & Fernandes.";
 
   const handleClick = () => {
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
-    window.open(url, "_blank")
-  }
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    // Use a programmatic anchor click to open in a new tab with rel attributes.
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  };
 
   return (
     <button
@@ -19,7 +29,7 @@ const WhatsAppButton = () => {
     >
       <MessageCircle size={28} />
     </button>
-  )
-}
+  );
+};
 
-export default WhatsAppButton
+export default WhatsAppButton;
