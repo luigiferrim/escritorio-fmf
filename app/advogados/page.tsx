@@ -4,7 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageCircle } from "lucide-react";
+import {
+  MessageCircle,
+  Briefcase,
+  Calendar,
+  BadgeCheck,
+  ArrowRight,
+} from "lucide-react";
 
 export default function AdvogadosPage() {
   const advogados = [
@@ -43,10 +49,20 @@ export default function AdvogadosPage() {
     },
   ];
 
+  const openWhatsApp = (number: string) => {
+    const url = `https://wa.me/${number}`;
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  };
+
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative h-[300px] w-full overflow-hidden">
+      <section className="relative h-[380px] w-full overflow-hidden">
         <Image
           src="/hero-sobre.jpg"
           alt="Advogados Associados"
@@ -54,83 +70,114 @@ export default function AdvogadosPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="hero-overlay absolute inset-0" />
         <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
+          <h1 className="mb-4 animate-fade-in-up text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Advogados Associados
           </h1>
-          <p className="max-w-2xl text-lg">
+          <p className="max-w-2xl animate-fade-in-up text-lg delay-100">
             Conheça nossa equipe de profissionais altamente qualificados
           </p>
         </div>
       </section>
 
-      {/* Advogados */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="space-y-16">
-            {advogados.map((advogado) => (
-              <div key={advogado.id} className="grid gap-8 md:grid-cols-3">
-                <div className="md:col-span-1">
-                  <div className="overflow-hidden rounded-lg">
+            {advogados.map((advogado, idx) => (
+              <div
+                key={advogado.id}
+                className={`grid gap-8 rounded-3xl border border-border/70 bg-white p-6 shadow-sm md:grid-cols-5 md:items-center md:p-8 ${
+                  idx % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
+                }`}
+              >
+                <div className="md:col-span-2">
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-border/70 shadow-sm">
                     <Image
                       src={advogado.foto || "/placeholder.svg"}
                       alt={advogado.nome}
-                      width={300}
-                      height={400}
-                      className="h-full w-full object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 40vw"
                     />
                   </div>
                 </div>
-                <div className="md:col-span-2">
-                  <h2 className="mb-2 text-3xl font-bold">{advogado.nome}</h2>
-                  <p className="mb-4 text-xl text-muted-foreground">
-                    {advogado.cargo} - {advogado.area}
+
+                <div className="md:col-span-3">
+                  <span className="mb-3 inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold text-primary">
+                    {advogado.cargo}
+                  </span>
+                  <h2 className="mb-3 text-3xl font-bold tracking-tight text-primary md:text-4xl">
+                    {advogado.nome}
+                  </h2>
+                  <p className="mb-6 text-lg text-muted-foreground">
+                    {advogado.area}
                   </p>
 
-                  <div className="mb-6 grid gap-4 sm:grid-cols-2">
-                    <Card>
-                      <CardContent className="p-4">
-                        <p className="font-medium">Área de Atuação</p>
-                        <p className="text-muted-foreground">{advogado.area}</p>
+                  <div className="mb-6 grid gap-3 sm:grid-cols-3">
+                    <Card className="border-border/70 bg-slate-50">
+                      <CardContent className="flex items-start gap-3 p-4">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent text-primary">
+                          <Briefcase size={16} />
+                        </div>
+                        <div>
+                          <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                            Área
+                          </p>
+                          <p className="text-sm font-medium text-primary">
+                            {advogado.area.split(",")[0]}
+                          </p>
+                        </div>
                       </CardContent>
                     </Card>
-                    <Card>
-                      <CardContent className="p-4">
-                        <p className="font-medium">Experiência</p>
-                        <p className="text-muted-foreground">
-                          {advogado.experiencia} anos
-                        </p>
+                    <Card className="border-border/70 bg-slate-50">
+                      <CardContent className="flex items-start gap-3 p-4">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent text-primary">
+                          <Calendar size={16} />
+                        </div>
+                        <div>
+                          <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                            Experiência
+                          </p>
+                          <p className="text-sm font-medium text-primary">
+                            {advogado.experiencia} anos
+                          </p>
+                        </div>
                       </CardContent>
                     </Card>
-                    <Card>
-                      <CardContent className="p-4">
-                        <p className="font-medium">Registro</p>
-                        <p className="text-muted-foreground">{advogado.oab}</p>
+                    <Card className="border-border/70 bg-slate-50">
+                      <CardContent className="flex items-start gap-3 p-4">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent text-primary">
+                          <BadgeCheck size={16} />
+                        </div>
+                        <div>
+                          <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                            Registro
+                          </p>
+                          <p className="text-sm font-medium text-primary">
+                            {advogado.oab}
+                          </p>
+                        </div>
                       </CardContent>
                     </Card>
                   </div>
 
-                  <div className="mb-6 space-y-4">
-                    <h3 className="text-xl font-bold">Biografia</h3>
-                    <p className="text-muted-foreground">{advogado.bio}</p>
+                  <div className="mb-6 rounded-2xl bg-slate-50 p-5">
+                    <h3 className="mb-2 text-xl font-bold text-primary">
+                      Biografia
+                    </h3>
+                    <p className="leading-relaxed text-muted-foreground">
+                      {advogado.bio}
+                    </p>
                   </div>
 
                   <Button
-                    className="flex items-center gap-2"
-                    onClick={() => {
-                      const url = `https://wa.me/${advogado.whatsapp}`;
-                      const a = document.createElement("a");
-                      a.href = url;
-                      a.target = "_blank";
-                      a.rel = "noopener noreferrer";
-                      document.body.appendChild(a);
-                      a.click();
-                      a.remove();
-                    }}
+                    size="lg"
+                    className="gap-2 bg-green-500 hover:bg-green-600"
+                    onClick={() => openWhatsApp(advogado.whatsapp)}
                   >
                     <MessageCircle size={18} />
-                    <span>Fale conosco no WhatsApp</span>
+                    Fale conosco no WhatsApp
                   </Button>
                 </div>
               </div>
@@ -139,19 +186,20 @@ export default function AdvogadosPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="section-wash py-20">
+        <div className="container relative mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-primary sm:text-4xl md:text-5xl">
               Precisa de Assessoria Jurídica?
             </h2>
             <p className="mb-8 text-lg text-muted-foreground">
               Nossa equipe está pronta para atender às suas necessidades
               jurídicas com excelência e dedicação.
             </p>
-            <Button asChild size="lg">
-              <Link href="/contato">Solicite seu atendimento</Link>
+            <Button asChild size="lg" className="gap-2">
+              <Link href="/contato">
+                Solicite seu atendimento <ArrowRight size={16} />
+              </Link>
             </Button>
           </div>
         </div>
