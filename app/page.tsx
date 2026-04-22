@@ -107,6 +107,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Atendimento Regional - SEO Local */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">
+              Procurando Advogado em Lages, SC?
+            </h2>
+            <p className="mb-4 text-lg text-muted-foreground">
+              O escritório Ferri, Maines &amp; Fernandes atua há mais de uma década com excelência em Direito Médico,
+              Direito Trabalhista Patronal, Direito Militar e Direito Civil na região serrana de Santa Catarina.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              Atendemos profissionais da saúde, militares ativos e inativos, empresas e pessoas físicas que buscam
+              assessoria jurídica séria e personalizada em Lages e região.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Advogados Destaque */}
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-6">

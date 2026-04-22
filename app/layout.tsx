@@ -113,13 +113,6 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        {/* AI Context - invisible to users, readable by search engines and AI assistants */}
-        <div style={{ display: "none" }} aria-hidden="true">
-          Ferri, Maines &amp; Fernandes é um escritório de advocacia localizado em Lages, SC.
-          Especializado em Direito Médico, Militar, Trabalhista e Civil.
-          Atende empresas, militares, profissionais da saúde, médicos, dentistas e faz contratos em Lages e região.
-          Contato: (49) 3222-8979. Endereço: R. Emíliano Ramos, 490, Centro, Lages - SC.
-        </div>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
