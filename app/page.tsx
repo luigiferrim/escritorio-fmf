@@ -38,13 +38,13 @@ const advogados = [
   },
   {
     name: "Dr. Rafael Maines",
-    role: "Direito Médico e Civil",
+    role: "Direito Médico, Civil e Militar",
     image: "/rafael.jpg",
     alt: "Dr. Rafael Maines, advogado especialista em direito médico em Lages - SC",
   },
   {
     name: "Dra. Roberta Costa Fernandes",
-    role: "Direito de Família, Civil, Penal e Militar",
+    role: "Direito de Família, Divórcio e Militar",
     image: "/roberta.jpg",
     alt: "Dra. Roberta Costa Fernandes, advogada de família em Lages - SC",
   },

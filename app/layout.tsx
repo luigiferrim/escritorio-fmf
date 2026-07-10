@@ -138,20 +138,19 @@ export default function RootLayout({
         name: "Rafael Maines",
         honorificPrefix: "Dr.",
         jobTitle: "Advogado",
-        knowsAbout: ["Direito Médico", "Direito Civil", "Contratos"],
+        knowsAbout: [
+          "Direito Médico",
+          "Direito Civil",
+          "Contratos",
+          "Direito Militar",
+        ],
       },
       {
         "@type": "Person",
         name: "Roberta Costa Fernandes",
         honorificPrefix: "Dra.",
         jobTitle: "Advogada",
-        knowsAbout: [
-          "Direito de Família",
-          "Divórcio",
-          "Direito Civil",
-          "Direito Penal",
-          "Direito Militar",
-        ],
+        knowsAbout: ["Direito de Família", "Divórcio", "Direito Militar"],
       },
     ],
   };

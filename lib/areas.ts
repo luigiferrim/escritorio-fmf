@@ -76,7 +76,7 @@ export const areas: Area[] = [
         h2: "Por que empresas de Lages escolhem nossa assessoria",
         paragraphs: [
           "Atendemos empresas do comércio, da indústria, do agronegócio, da saúde e de serviços da serra catarinense. O trabalho é conduzido diretamente pela sócia responsável, com relatórios claros sobre cada processo e reuniões periódicas de alinhamento.",
-          "Para empresas com demanda recorrente, oferecemos assessoria mensal com custo previsível, que funciona como um departamento jurídico trabalhista externo.",
+          "Cada demanda começa com uma análise objetiva de riscos e custos, para que a empresa saiba exatamente em que pé está cada processo e decida com segurança.",
         ],
       },
     ],
@@ -152,6 +152,12 @@ export const areas: Area[] = [
           "Direito médico exige domínio de dois mundos: o jurídico e o técnico-assistencial. Saber ler um prontuário, formular quesitos periciais corretos e diferenciar obrigação de meio e de resultado é decisivo para o rumo do processo. É essa a experiência que o escritório acumulou em mais de duas décadas dedicadas à área.",
         ],
       },
+      {
+        h2: "Assessoria mensal para clínicas e profissionais da saúde",
+        paragraphs: [
+          "Para clínicas, consultórios e profissionais da saúde com demanda recorrente, oferecemos assessoria jurídica mensal: orientação preventiva contínua, análise de contratos e termos de consentimento, adequação de documentos e canal direto com o advogado, por um custo mensal previsível.",
+        ],
+      },
     ],
     faq: [
       {
@@ -165,6 +171,10 @@ export const areas: Area[] = [
       {
         q: "Médico responde por qualquer resultado ruim?",
         a: "Não. Em regra, a obrigação do médico é de meio, não de resultado: responde-se por culpa comprovada (imprudência, negligência ou imperícia), não pelo insucesso do tratamento em si.",
+      },
+      {
+        q: "Como funciona a assessoria mensal para clínicas e consultórios?",
+        a: "Definimos o escopo conforme o porte e a rotina da clínica. Você passa a contar com orientação jurídica contínua, revisão de documentos e um canal direto com o advogado para as dúvidas do dia a dia, sem custo por consulta.",
       },
       {
         q: "Vocês atendem médicos de outras cidades?",
@@ -417,7 +427,7 @@ export const areas: Area[] = [
     heroSub:
       "Assessoria jurídica completa para empresas de Lages e da região serrana de Santa Catarina.",
     intro: [
-      "Empresas da serra catarinense enfrentam os mesmos riscos jurídicos das grandes capitais, sejam trabalhistas, contratuais, societários ou de consumo, muitas vezes sem um jurídico interno. O Ferri, Maines & Fernandes funciona como o departamento jurídico da sua empresa: próximo, ágil e com custo previsível.",
+      "Empresas da serra catarinense enfrentam os mesmos riscos jurídicos das grandes capitais, sejam trabalhistas, contratuais, societários ou de consumo, muitas vezes sem um jurídico interno. O Ferri, Maines & Fernandes atende a sua empresa com proximidade, agilidade e visão prática de negócio, tanto na prevenção quanto no contencioso.",
     ],
     sections: [
       {
@@ -445,21 +455,11 @@ export const areas: Area[] = [
           },
         ],
       },
-      {
-        h2: "Assessoria mensal para empresas",
-        paragraphs: [
-          "Para empresas com demanda recorrente, oferecemos planos de assessoria contínua: consultas por WhatsApp e e-mail, análise de contratos, acompanhamento de processos e reuniões periódicas, por um custo mensal previsível e muito inferior ao de um jurídico interno.",
-        ],
-      },
     ],
     faq: [
       {
         q: "Minha empresa é pequena. Precisa de advogado?",
         a: "Pequenas empresas são justamente as que mais sofrem com passivo trabalhista e contratos mal feitos, pois um único processo compromete o caixa. A prevenção é proporcionalmente mais valiosa para o pequeno negócio.",
-      },
-      {
-        q: "Como funciona a assessoria mensal?",
-        a: "Definimos o escopo conforme o porte e o setor da empresa. Você passa a ter um canal direto com os advogados para as dúvidas do dia a dia, sem custo por consulta.",
       },
       {
         q: "Vocês atendem empresas de outras cidades da região?",
@@ -493,7 +493,7 @@ export const areas: Area[] = [
     heroSub:
       "Defesa de policiais militares, bombeiros e militares das Forças Armadas em Lages e em toda Santa Catarina.",
     intro: [
-      "A carreira militar tem regras próprias, e um processo disciplinar mal conduzido pode custar a farda. A Dra. Roberta Costa Fernandes, com especialização em Direito Penal e atuação em Direito Militar, defende policiais militares, bombeiros e militares das Forças Armadas em Lages e em toda Santa Catarina.",
+      "A carreira militar tem regras próprias, e um processo disciplinar mal conduzido pode custar a farda. O Dr. Rafael Maines e a Dra. Roberta Costa Fernandes atuam na defesa de policiais militares, bombeiros e militares das Forças Armadas em Lages e em toda Santa Catarina, nas esferas administrativa e judicial.",
     ],
     sections: [
       {
