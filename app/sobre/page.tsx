@@ -1,8 +1,24 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Users, Scale, BookOpen } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Sobre o Escritório de Advocacia em Lages - SC",
+  description:
+    "Conheça o Ferri, Maines & Fernandes: escritório de advocacia em Lages - SC formado por sócios com décadas de atuação e histórico de liderança na OAB/SC.",
+  alternates: {
+    canonical: "/sobre",
+  },
+  openGraph: {
+    title: "Sobre o Escritório de Advocacia em Lages - SC",
+    description:
+      "Escritório de advocacia em Lages - SC formado por sócios com décadas de atuação e histórico de liderança na OAB/SC.",
+    url: "/sobre",
+  },
+};
 
 export default function SobrePage() {
   return (
@@ -10,7 +26,7 @@ export default function SobrePage() {
       <section className="relative h-[300px] w-full overflow-hidden">
         <Image
           src="/hero-sobre.jpg"
-          alt="Sobre o escritório"
+          alt="Escritório de advocacia Ferri, Maines & Fernandes no Centro de Lages - SC"
           fill
           className="object-cover"
           priority
@@ -18,11 +34,11 @@ export default function SobrePage() {
         <div className="hero-overlay absolute inset-0" />
         <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
           <h1 className="mb-4 animate-fade-in-up text-4xl font-bold tracking-tight sm:text-5xl">
-            Sobre Nosso Escritório
+            Sobre o Ferri, Maines &amp; Fernandes
           </h1>
           <p className="max-w-2xl animate-fade-in-up text-lg delay-100">
-            Conheça nossa história, valores e compromisso com a excelência
-            jurídica
+            Advocacia em Lages - SC com sócios com décadas de experiência e
+            histórico de liderança na OAB
           </p>
         </div>
       </section>
@@ -36,30 +52,35 @@ export default function SobrePage() {
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
                 <p>
-                  Com mais de uma década de atuação, o escritório Ferri, Maines
-                  &amp; Fernandes Advogados Associados se consolidou pela
-                  excelência no atendimento e pela experiência sólida em
-                  diversas áreas do Direito.
+                  O Ferri, Maines &amp; Fernandes Advogados Associados nasceu
+                  da união de três advogados com trajetórias consolidadas no
+                  foro de Lages: a Dra. Janaina Ferri Maines (OAB/SC 14.868), o
+                  Dr. Rafael Maines (OAB/SC 9.118) e a Dra. Roberta Costa
+                  Fernandes (OAB/SC 14.869). Juntos, os sócios somam mais de 75
+                  anos de advocacia na serra catarinense.
                 </p>
                 <p>
-                  Desde a sua fundação, o escritório atua nas áreas do Direito
-                  Médico, Direito Militar, Direito do Trabalho e Direito Civil,
-                  com um time de profissionais altamente qualificados,
-                  comprometidos com a ética, a transparência e a busca pelos
-                  melhores resultados.
+                  Essa trajetória inclui participação ativa na vida
+                  institucional da advocacia. A Dra. Janaina foi
+                  Vice-Presidente da OAB Subseção de Lages entre 2013 e 2015 e
+                  Conselheira Estadual da OAB/SC entre 2019 e 2021. O Dr.
+                  Rafael atua há mais de 20 anos na defesa de médicos e
+                  profissionais da saúde. A Dra. Roberta advoga desde 1999 nas
+                  áreas de Família, Sucessões, Civil, Penal e Militar.
                 </p>
                 <p>
-                  Ao longo dos anos, construímos uma reputação de confiança,
-                  oferecendo soluções jurídicas personalizadas e eficazes, tanto
-                  na esfera consultiva quanto contenciosa, para pessoas físicas
-                  e jurídicas.
+                  Do nosso escritório no Centro de Lages, na Rua Emíliano
+                  Ramos, 490, atendemos clientes de toda a região serrana de
+                  Santa Catarina, de São Joaquim a Otacílio Costa, de Correia
+                  Pinto a Urubici, nas esferas consultiva e contenciosa, sempre
+                  com atendimento pessoal conduzido pelos próprios sócios.
                 </p>
               </div>
             </div>
             <div className="relative h-[420px] overflow-hidden rounded-2xl border border-border/70 shadow-sm">
               <Image
                 src="/escritorio.jpg"
-                alt="Foto da equipe no escritório"
+                alt="Equipe do escritório Ferri, Maines & Fernandes em Lages - SC"
                 fill
                 className="object-cover"
               />
@@ -123,13 +144,13 @@ export default function SobrePage() {
               {
                 title: "Atendimento Personalizado",
                 description:
-                  "Cada cliente é atendido com atenção individualizada e estratégias jurídicas alinhadas às suas necessidades.",
+                  "Cada cliente de Lages e região é atendido com atenção individualizada e estratégias jurídicas alinhadas às suas necessidades.",
                 icon: Users,
               },
               {
                 title: "Equipe Especializada",
                 description:
-                  "Contamos com profissionais experientes em Direito Médico, Militar, Trabalhista e Civil, oferecendo excelência técnica.",
+                  "Contamos com profissionais experientes em Direito Trabalhista Patronal, Médico, de Família, Civil, Empresarial e Militar.",
                 icon: Award,
               },
               {
@@ -169,15 +190,31 @@ export default function SobrePage() {
         </div>
       </section>
 
+      <section className="section-wash py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-4 text-2xl font-bold tracking-tight sm:text-3xl">
+              Compromisso com a Advocacia Ética
+            </h2>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Seguimos rigorosamente o Código de Ética e Disciplina da OAB. Não
+              prometemos resultados: oferecemos análise técnica honesta sobre
+              as chances reais de cada caso, para que você decida com
+              segurança.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-primary py-20 text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-              Precisa de Assessoria Jurídica?
+              Precisa de um Advogado em Lages?
             </h2>
             <p className="mb-8 text-lg">
-              Entre em contato conosco para agendar uma consulta e conhecer como
-              podemos ajudar você ou sua empresa.
+              Agende uma consulta presencial ou por videochamada e conheça como
+              podemos ajudar você ou a sua empresa.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Button

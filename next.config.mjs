@@ -7,12 +7,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
+    formats: ["image/avif", "image/webp"],
   },
   async headers() {
     return [
@@ -23,7 +18,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://api.formspree.io https://*.google.com; frame-src 'self' https://www.google.com https://maps.google.com https://www.google.com/maps https://www.google.com/maps/embed; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://maps.googleapis.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https: https://www.gstatic.com https://fonts.googleapis.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';",
+              "default-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google.com; frame-src 'self' https://www.google.com https://maps.google.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://maps.googleapis.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https:; object-src 'none'; base-uri 'self'; frame-ancestors 'none';",
           },
           {
             key: "Strict-Transport-Security",

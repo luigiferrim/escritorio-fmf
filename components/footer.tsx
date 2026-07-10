@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Instagram } from "lucide-react";
+import { areas } from "@/lib/areas";
+import { INSTAGRAM_URL, whatsappUrl } from "@/lib/site";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,26 +15,22 @@ const Footer = () => {
               Ferri, Maines &amp; Fernandes
             </h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Advocacia com mais de uma década de excelência nas áreas do
-              Direito Médico, Militar, Trabalhista e Civil.
+              Advocacia em Lages - SC nas áreas do Direito Trabalhista
+              Patronal, Médico, de Família e Divórcio, Contratos, Empresarial
+              e Militar, atendendo toda a região serrana de Santa Catarina.
             </p>
           </div>
 
           <div>
             <h3 className="mb-4 text-lg font-bold">Áreas de Atuação</h3>
             <ul className="space-y-2 text-sm">
-              {[
-                "Direito Médico",
-                "Direito Militar",
-                "Direito Trabalhista",
-                "Direito Civil",
-              ].map((area) => (
-                <li key={area}>
+              {areas.map((area) => (
+                <li key={area.slug}>
                   <Link
-                    href="/sobre"
+                    href={`/areas-de-atuacao/${area.slug}`}
                     className="text-muted-foreground transition-colors hover:text-primary"
                   >
-                    {area}
+                    {area.nome}
                   </Link>
                 </li>
               ))}
@@ -54,6 +52,18 @@ const Footer = () => {
               </p>
               <p>
                 <a
+                  href={whatsappUrl(
+                    "Olá, gostaria de agendar uma consulta com o escritório Ferri, Maines & Fernandes."
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-primary"
+                >
+                  WhatsApp: (49) 98412-3389
+                </a>
+              </p>
+              <p>
+                <a
                   href="mailto:advogadosfmf@gmail.com"
                   className="transition-colors hover:text-primary"
                 >
@@ -67,7 +77,7 @@ const Footer = () => {
             <h3 className="mb-4 text-lg font-bold">Redes Sociais</h3>
             <div className="flex space-x-4">
               <Link
-                href="https://www.instagram.com/fmfadvogadoss/"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-primary"
@@ -82,15 +92,15 @@ const Footer = () => {
         <div className="mt-10 border-t border-border/70 pt-6">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Ferri, Maines &amp; Fernandes. Todos os direitos
-              reservados.
+              © {currentYear} Ferri, Maines &amp; Fernandes Advogados
+              Associados. Todos os direitos reservados.
             </p>
             <div className="flex gap-4 text-sm text-muted-foreground">
-              <Link href="#" className="transition-colors hover:text-primary">
+              <Link
+                href="/politica-de-privacidade"
+                className="transition-colors hover:text-primary"
+              >
                 Política de Privacidade
-              </Link>
-              <Link href="#" className="transition-colors hover:text-primary">
-                Termos de Uso
               </Link>
             </div>
           </div>

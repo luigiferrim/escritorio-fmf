@@ -6,14 +6,50 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import WhatsAppButton from "@/components/whatsapp-button";
+import {
+  SITE_URL,
+  SITE_NAME,
+  PHONE_E164,
+  ADDRESS,
+  EMAIL,
+  INSTAGRAM_URL,
+  CITIES_SERVED,
+} from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ferri, Maines & Fernandes | Escritório de Advocacia",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Advogados em Lages - SC | Ferri, Maines & Fernandes",
+    template: "%s | FMF Advogados",
+  },
   description:
-    "Escritório de advocacia com mais de uma década de atuação, especializado em Direito Médico, Direito Militar, Direito Trabalhista e Direito Civil.",
-  generator: "v0.dev",
+    "Escritório de advocacia em Lages - SC com sócios com até 30 anos de atuação em Direito Trabalhista Patronal, Médico, de Família, Contratos e Militar. (49) 3222-8979.",
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "/",
+    siteName: SITE_NAME,
+    title: "Advogados em Lages - SC | Ferri, Maines & Fernandes",
+    description:
+      "Escritório de advocacia em Lages - SC: Direito Trabalhista Patronal, Médico, Família e Divórcio, Contratos, Empresarial e Militar.",
+    images: [
+      {
+        url: "/escritorio.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Escritório Ferri, Maines & Fernandes em Lages - SC",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -23,85 +59,101 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LegalService",
-    "name": "Ferri, Maines & Fernandes",
-    "description": "Escritório de advocacia com mais de uma década de atuação em Direito Médico, Militar, Trabalhista e Civil, com atendimento estratégico e personalizado.",
-    "url": "https://www.ferrimainesefernandes.com",
-    "logo": "https://www.ferrimainesefernandes.com/logo.png",
-    "image": "https://www.ferrimainesefernandes.com/hero-home.jpg",
-    "telephone": "+554932228979",
-    "email": "advogadosfmf@gmail.com",
-    "address": {
+    "@type": "Attorney",
+    "@id": `${SITE_URL}/#organization`,
+    name: SITE_NAME,
+    description:
+      "Escritório de advocacia em Lages - SC com atuação em Direito Trabalhista Patronal, Direito Médico, Direito de Família e Divórcio, Contratos, Direito Empresarial e Direito Militar.",
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo.png`,
+    image: `${SITE_URL}/escritorio.jpg`,
+    telephone: PHONE_E164,
+    email: EMAIL,
+    slogan: "Advocacia em Lages, Santa Catarina",
+    knowsLanguage: "pt-BR",
+    hasMap:
+      "https://maps.google.com/?q=R.+Em%C3%ADliano+Ramos,+490,+Centro,+Lages,+SC",
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "R. Emíliano Ramos, 490",
-      "addressLocality": "Lages",
-      "addressRegion": "SC",
-      "postalCode": "88502-216",
-      "addressCountry": "BR"
+      streetAddress: ADDRESS.street,
+      addressLocality: ADDRESS.city,
+      addressRegion: ADDRESS.state,
+      postalCode: ADDRESS.postalCode,
+      addressCountry: "BR",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": -27.8166,
-      "longitude": -50.3261
+      latitude: -27.8166,
+      longitude: -50.3261,
     },
-    "openingHoursSpecification": [
+    openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "12:00"
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "12:00",
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "14:00",
-        "closes": "18:00"
-      }
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "14:00",
+        closes: "18:00",
+      },
     ],
-    "contactPoint": {
+    contactPoint: {
       "@type": "ContactPoint",
-      "telephone": "+554998412-3389",
-      "contactType": "customer service",
-      "availableLanguage": "Portuguese"
+      telephone: "+5549984123389",
+      contactType: "customer service",
+      availableLanguage: "Portuguese",
     },
-    "sameAs": [
-      "https://www.instagram.com/fmfadvogadoss/"
+    sameAs: [INSTAGRAM_URL],
+    areaServed: [
+      ...CITIES_SERVED.map((city) => ({
+        "@type": "City",
+        name: city,
+        addressRegion: "SC",
+        addressCountry: "BR",
+      })),
+      { "@type": "State", name: "Santa Catarina", addressCountry: "BR" },
     ],
-    "areaServed": {
-      "@type": "City",
-      "name": "Lages",
-      "addressRegion": "SC",
-      "addressCountry": "BR"
-    },
-    "serviceType": [
+    serviceType: [
+      "Direito Trabalhista Patronal",
       "Direito Médico",
+      "Direito de Família",
+      "Divórcio",
+      "Contratos e Direito Civil",
+      "Direito Empresarial",
       "Direito Militar",
-      "Direito Trabalhista",
-      "Direito Civil"
     ],
-    "employee": [
+    employee: [
       {
         "@type": "Person",
-        "name": "Janaina Ferri Maines",
-        "honorificPrefix": "Dra.",
-        "jobTitle": "Advogada",
-        "knowsAbout": "Direito Trabalhista Patronal"
+        name: "Janaina Ferri Maines",
+        honorificPrefix: "Dra.",
+        jobTitle: "Advogada",
+        knowsAbout: ["Direito Trabalhista Patronal", "Direito Empresarial"],
       },
       {
         "@type": "Person",
-        "name": "Rafael Maines",
-        "honorificPrefix": "Dr.",
-        "jobTitle": "Advogado",
-        "knowsAbout": ["Direito Médico", "Direito Civil"]
+        name: "Rafael Maines",
+        honorificPrefix: "Dr.",
+        jobTitle: "Advogado",
+        knowsAbout: ["Direito Médico", "Direito Civil", "Contratos"],
       },
       {
         "@type": "Person",
-        "name": "Roberta Costa Fernandes",
-        "honorificPrefix": "Dra.",
-        "jobTitle": "Advogada",
-        "knowsAbout": ["Direito de Família", "Direito Civil", "Direito Penal", "Direito Militar"]
-      }
-    ]
+        name: "Roberta Costa Fernandes",
+        honorificPrefix: "Dra.",
+        jobTitle: "Advogada",
+        knowsAbout: [
+          "Direito de Família",
+          "Divórcio",
+          "Direito Civil",
+          "Direito Penal",
+          "Direito Militar",
+        ],
+      },
+    ],
   };
 
   return (
