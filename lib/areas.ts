@@ -30,12 +30,14 @@ export type Area = {
     text: string;
     whatsappMessage: string;
   };
+  whatsapp: string;
   related: { slug: string; label: string }[];
 };
 
 export const areas: Area[] = [
   {
     slug: "direito-trabalhista-patronal",
+    whatsapp: "5549984123137",
     nome: "Direito Trabalhista Patronal",
     cardDescription:
       "Defesa de empresas em reclamações trabalhistas, assessoria preventiva e consultoria em rotinas de RH em Lages e região.",
@@ -109,6 +111,7 @@ export const areas: Area[] = [
   },
   {
     slug: "direito-medico",
+    whatsapp: "5549984123389",
     nome: "Direito Médico",
     cardDescription:
       "Defesa de médicos, dentistas e clínicas em processos judiciais, éticos (CRM) e administrativos em Lages e em toda Santa Catarina.",
@@ -181,6 +184,7 @@ export const areas: Area[] = [
   },
   {
     slug: "direito-de-familia",
+    whatsapp: "5549984123271",
     nome: "Direito de Família",
     cardDescription:
       "Divórcio, guarda de filhos, pensão alimentícia, união estável e inventários, com atendimento reservado e humano.",
@@ -254,6 +258,7 @@ export const areas: Area[] = [
   },
   {
     slug: "divorcio",
+    whatsapp: "5549984123271",
     nome: "Divórcio",
     cardDescription:
       "Divórcio consensual em cartório ou judicial, partilha de bens, guarda e pensão, com orientação desde a primeira conversa.",
@@ -328,6 +333,7 @@ export const areas: Area[] = [
   },
   {
     slug: "contratos-e-direito-civil",
+    whatsapp: "5549984123389",
     nome: "Contratos e Direito Civil",
     cardDescription:
       "Elaboração e revisão de contratos, responsabilidade civil, cobranças e demandas cíveis para pessoas e empresas.",
@@ -400,6 +406,7 @@ export const areas: Area[] = [
   },
   {
     slug: "direito-empresarial",
+    whatsapp: "5549984123137",
     nome: "Direito Empresarial",
     cardDescription:
       "Assessoria jurídica contínua para empresas da serra catarinense: contratos, societário, cobranças e prevenção.",
@@ -475,6 +482,7 @@ export const areas: Area[] = [
   },
   {
     slug: "direito-militar",
+    whatsapp: "5549984123271",
     nome: "Direito Militar",
     cardDescription:
       "Defesa de militares em processos administrativos disciplinares, conselhos de disciplina e ações judiciais.",

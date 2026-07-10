@@ -179,7 +179,7 @@ export default async function AreaPage({ params }: Props) {
             <div className="flex flex-col justify-center gap-3 pt-4 sm:flex-row">
               <Button asChild size="lg" className="gap-2 bg-green-500 hover:bg-green-600">
                 <a
-                  href={whatsappUrl(area.cta.whatsappMessage)}
+                  href={whatsappUrl(area.cta.whatsappMessage, area.whatsapp)}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -312,7 +312,7 @@ export default async function AreaPage({ params }: Props) {
                 className="gap-2 bg-green-500 text-white hover:bg-green-600"
               >
                 <a
-                  href={whatsappUrl(area.cta.whatsappMessage)}
+                  href={whatsappUrl(area.cta.whatsappMessage, area.whatsapp)}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
