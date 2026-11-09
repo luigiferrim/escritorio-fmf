@@ -4,6 +4,8 @@ Site institucional desenvolvido para o escritório Ferri, Maines & Fernandes, co
 
 Este projeto foi criado com tecnologias modernas para apresentar a equipe, áreas de atuação e facilitar o contato com clientes.
 
+**No ar e em uso pelo escritório.** Fiz o site de ponta a ponta, até o deploy, desenvolvendo com apoio de IA (Claude Code) e revisando cada entrega: formulário validado no servidor, headers de segurança e domínio próprio.
+
 ---
 
 ## 🔗 Acesse o site
@@ -40,8 +42,11 @@ Este projeto foi criado com tecnologias modernas para apresentar a equipe, área
 1. Clone este repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/escritorio-advocacia.git
+git clone https://github.com/luigiferrim/escritorio-fmf.git
+cd escritorio-fmf
 ```
+
+Depois siga os passos de **Testes locais** abaixo.
 
 ---
 
