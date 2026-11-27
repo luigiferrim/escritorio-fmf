@@ -53,8 +53,8 @@ export default function AreasDeAtuacaoPage() {
           priority
         />
         <div className="hero-overlay absolute inset-0" />
-        <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
-          <h1 className="mb-4 animate-fade-in-up text-4xl font-bold tracking-tight sm:text-5xl">
+        <div className="container ed-hero relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
+          <h1 className="mb-4 animate-fade-in-up text-4xl font-medium tracking-[-0.035em] sm:text-5xl">
             Áreas de Atuação
           </h1>
           <p className="max-w-2xl animate-fade-in-up text-lg delay-100">
@@ -66,7 +66,7 @@ export default function AreasDeAtuacaoPage() {
 
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
+          <div className="ed-cta mb-12">
             <p className="text-lg leading-relaxed text-muted-foreground">
               Atuamos nas áreas em que nossos sócios têm décadas de experiência
               prática no foro de Lages e nos tribunais de Santa Catarina.
@@ -81,9 +81,9 @@ export default function AreasDeAtuacaoPage() {
                 href={`/areas-de-atuacao/${area.slug}`}
                 className="group"
               >
-                <Card className="h-full border-border/70 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <Card className="h-full border-border/70 bg-white transition-all duration-300 hover:border-foreground">
                   <CardContent className="flex h-full flex-col p-6">
-                    <h2 className="mb-3 text-xl font-bold transition-colors group-hover:text-primary">
+                    <h2 className="mb-3 text-xl font-medium transition-colors group-hover:text-primary">
                       {area.nome}
                     </h2>
                     <p className="mb-4 flex-1 leading-relaxed text-muted-foreground">
@@ -106,19 +106,19 @@ export default function AreasDeAtuacaoPage() {
 
       <section className="bg-primary py-20 text-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          <div className="ed-cta">
+            <h2 className="ed-title on-dark">
               Não encontrou a sua situação?
             </h2>
             <p className="mb-8 text-lg">
               Descreva o seu caso e indicamos o caminho jurídico adequado, com
               transparência desde a primeira conversa.
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <div className="flex flex-col gap-3 sm:flex-row">
               <Button
                 asChild
                 size="lg"
-                className="gap-2 bg-green-500 text-white hover:bg-green-600"
+                className="gap-2 bg-white text-foreground hover:bg-white/90"
               >
                 <a
                   href={whatsappUrl(

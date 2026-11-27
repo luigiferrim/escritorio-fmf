@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 60 9% 95%;
+    --foreground: 0 0% 7%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 7%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 214 100% 97%;
-    --accent-foreground: 215 60% 24%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.75rem;
+    --popover-foreground: 0 0% 7%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 60 6% 88%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 60 7% 91%;
+    --muted-foreground: 60 2% 35%;
+    --accent: 60 6% 88%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 60 6% 80%;
+    --input: 60 6% 80%;
+    --ring: 0 0% 7%;
+    --radius: 0.125rem;
   }
 
   .dark {
@@ -57,7 +57,12 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
   }
 }
 
@@ -84,13 +89,106 @@
   .hero-overlay {
     background: linear-gradient(
       180deg,
-      hsl(222 47% 11% / 0.28) 0%,
-      hsl(222 47% 11% / 0.52) 100%
+      hsl(0 0% 7% / 0.55) 0%,
+      hsl(0 0% 7% / 0.78) 100%
     );
   }
   .section-wash {
-    background:
-      radial-gradient(circle at top, hsl(214 100% 97%) 0%, transparent 55%),
-      hsl(210 40% 98%);
+    background: hsl(0 0% 100%);
+  }
+  .mono-label {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  /* ---- linguagem editorial da identidade nova ---- */
+  main {
+    counter-reset: secao;
+  }
+  .ed-title {
+    counter-increment: secao;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    border-top: 2px solid hsl(var(--foreground));
+    padding-top: 1.25rem;
+    margin-bottom: 3rem;
+    text-align: left;
+    font-weight: 500;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+  .ed-title::before {
+    content: counter(secao, decimal-leading-zero);
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    color: hsl(var(--muted-foreground));
+  }
+  @media (min-width: 768px) {
+    .ed-title {
+      grid-template-columns: 12rem 1fr;
+      gap: 0;
+    }
+    .ed-title::before {
+      padding-top: 0.6rem;
+    }
+  }
+  .ed-title.on-dark {
+    border-top-color: #fff;
+  }
+  .ed-title.on-dark::before {
+    color: rgb(255 255 255 / 0.6);
+  }
+  /* linhas numeradas, como a lista dos carrosseis */
+  .ed-list {
+    counter-reset: item;
+    border-top: 1px solid hsl(var(--border));
+  }
+  .ed-row {
+    counter-increment: item;
+    position: relative;
+    border-bottom: 1px solid hsl(var(--border));
+    padding: 1.75rem 0 1.75rem 3.25rem;
+  }
+  .ed-row::before {
+    content: counter(item, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: hsl(var(--muted-foreground));
+  }
+  /* hero escuro alinhado a esquerda */
+  .ed-hero {
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    text-align: left !important;
+    padding-bottom: 3.5rem;
+  }
+  .ed-hero h1 {
+    max-width: 16ch;
+    font-size: clamp(2.5rem, 6vw, 5rem) !important;
+    line-height: 0.98;
+    letter-spacing: -0.045em !important;
+  }
+  .ed-hero p {
+    max-width: 44rem;
+    margin-left: 0 !important;
+    color: rgb(255 255 255 / 0.72);
+  }
+  .ed-cta {
+    text-align: left;
+  }
+  @media (min-width: 768px) {
+    .ed-cta > :not(h2) {
+      margin-left: 12rem;
+      max-width: 42rem;
+    }
   }
 }

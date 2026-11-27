@@ -135,8 +135,8 @@ export default function Home() {
           priority
         />
         <div className="hero-overlay absolute inset-0" />
-        <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
-          <h1 className="mb-4 animate-fade-in-up text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+        <div className="container ed-hero relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
+          <h1 className="mb-4 animate-fade-in-up text-4xl font-medium tracking-[-0.035em] sm:text-5xl md:text-6xl">
             Advogados em Lages - SC
           </h1>
           <p className="mb-8 max-w-2xl animate-fade-in-up text-lg leading-relaxed delay-100 sm:text-xl">
@@ -148,7 +148,7 @@ export default function Home() {
             <Button
               asChild
               size="lg"
-              className="gap-2 bg-green-500 text-white shadow-sm hover:bg-green-600"
+              className="gap-2 bg-white text-foreground hover:bg-background/90"
             >
               <a
                 href={whatsappUrl(
@@ -175,10 +175,11 @@ export default function Home() {
 
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">
+          <div>
+            <h2 className="ed-title">
               Escritório de Advocacia em Lages, Santa Catarina
             </h2>
+            <div className="max-w-2xl md:ml-[12rem]">
             <p className="mb-4 text-lg leading-relaxed text-muted-foreground">
               O Ferri, Maines &amp; Fernandes Advogados Associados atende
               empresas, profissionais da saúde, militares e famílias de Lages e
@@ -197,25 +198,26 @@ export default function Home() {
                 Conheça o Escritório <ArrowRight size={16} />
               </Link>
             </Button>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section-wash py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="ed-title">
             Áreas de Atuação
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
             {areas.map((area) => (
               <Link
                 key={area.slug}
                 href={`/areas-de-atuacao/${area.slug}`}
                 className="group"
               >
-                <Card className="h-full border-border/70 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <Card className="h-full rounded-none border-0 bg-card transition-colors duration-300 hover:bg-muted">
                   <CardContent className="flex h-full flex-col p-6">
-                    <h3 className="mb-3 text-xl font-bold transition-colors group-hover:text-primary">
+                    <h3 className="mb-3 text-xl font-medium transition-colors group-hover:text-primary">
                       {area.nome}
                     </h3>
                     <p className="mb-4 flex-1 leading-relaxed text-muted-foreground">
@@ -233,9 +235,9 @@ export default function Home() {
               </Link>
             ))}
             <Link href="/areas-de-atuacao" className="group">
-              <Card className="h-full border-border/70 bg-primary text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <Card className="h-full rounded-none border-0 bg-primary text-white transition-colors duration-300 hover:bg-primary/90">
                 <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
-                  <h3 className="mb-3 text-xl font-bold">
+                  <h3 className="mb-3 text-xl font-medium">
                     Todas as Áreas de Atuação
                   </h3>
                   <span className="inline-flex items-center gap-2 text-sm font-semibold">
@@ -254,43 +256,35 @@ export default function Home() {
 
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="ed-title">
             Por que contratar o Ferri, Maines &amp; Fernandes?
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {diferenciais.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Card
-                  key={item.title}
-                  className="border-border/70 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <CardContent className="p-6">
-                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-accent text-primary">
-                      <Icon size={20} />
-                    </div>
-                    <h3 className="mb-2 text-xl font-bold">{item.title}</h3>
-                    <p className="leading-relaxed text-muted-foreground">
-                      {item.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              );
-            })}
+          <div className="ed-list md:ml-[12rem]">
+            {diferenciais.map((item) => (
+              <div
+                key={item.title}
+                className="ed-row grid gap-2 md:grid-cols-[1fr_1.4fr] md:gap-10"
+              >
+                <h3 className="text-xl font-medium tracking-[-0.02em]">{item.title}</h3>
+                <p className="leading-relaxed text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="section-wash py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="ed-title">
             Nossos Advogados
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
             {advogados.map((advogado, index) => (
               <Card
                 key={index}
-                className="group overflow-hidden border-border/70 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group overflow-hidden rounded-none border-0 bg-transparent"
               >
                 <div className="aspect-square w-full overflow-hidden">
                   <Image
@@ -301,8 +295,8 @@ export default function Home() {
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
-                <CardContent className="p-6 text-center">
-                  <h3 className="mb-1 text-xl font-bold">{advogado.name}</h3>
+                <CardContent className="px-0 pb-0 pt-5 text-left">
+                  <h3 className="mb-1 text-xl font-medium tracking-[-0.02em]">{advogado.name}</h3>
                   <p className="mb-4 text-muted-foreground">{advogado.role}</p>
                   <Button asChild variant="outline" className="w-full">
                     <Link href="/advogados">Ver Perfil</Link>
@@ -311,7 +305,7 @@ export default function Home() {
               </Card>
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-12">
             <Button asChild>
               <Link href="/advogados">Conheça Toda Nossa Equipe</Link>
             </Button>
@@ -321,18 +315,18 @@ export default function Home() {
 
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="ed-title">
             Perguntas Frequentes
           </h2>
-          <div className="mx-auto max-w-3xl space-y-3">
+          <div className="border-t border-border md:ml-[12rem]">
             {faqItems.map((item, i) => (
               <details
                 key={i}
-                className="group rounded-xl border border-border/70 bg-white p-5 transition-all open:shadow-sm"
+                className="group border-b border-border py-6"
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold marker:hidden [&::-webkit-details-marker]:hidden">
                   {item.q}
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent text-primary transition-transform group-open:rotate-45">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center border border-foreground/25 text-foreground transition-transform group-open:rotate-45">
                     <svg
                       width="14"
                       height="14"
@@ -362,14 +356,14 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
-              <h2 className="mb-8 text-3xl font-bold tracking-tight">
+              <h2 className="ed-title !mb-8 md:!grid-cols-[6rem_1fr]">
                 Onde Estamos em Lages
               </h2>
               <div className="mb-8 space-y-5">
-                <div className="flex items-start gap-3 rounded-xl bg-white/70 p-4">
+                <div className="flex items-start gap-3 border-b border-border py-4">
                   <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <div>
-                    <h3 className="font-bold">Endereço</h3>
+                    <h3 className="font-medium">Endereço</h3>
                     <p className="text-muted-foreground">
                       R. Emíliano Ramos, 490 - Centro
                       <br />
@@ -377,10 +371,10 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 rounded-xl bg-white/70 p-4">
+                <div className="flex items-start gap-3 border-b border-border py-4">
                   <Clock className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <div>
-                    <h3 className="font-bold">Horário de Funcionamento</h3>
+                    <h3 className="font-medium">Horário de Funcionamento</h3>
                     <p className="text-muted-foreground">
                       Segunda a Sexta: 09:00 às 12:00 e 14:00 às 18:00
                       <br />
@@ -388,10 +382,10 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 rounded-xl bg-white/70 p-4">
+                <div className="flex items-start gap-3 border-b border-border py-4">
                   <Phone className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <div>
-                    <h3 className="font-bold">Telefone</h3>
+                    <h3 className="font-medium">Telefone</h3>
                     <p className="text-muted-foreground">
                       <a
                         href="tel:+554932228979"
@@ -413,10 +407,10 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 rounded-xl bg-white/70 p-4">
+                <div className="flex items-start gap-3 border-b border-border py-4">
                   <Mail className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <div>
-                    <h3 className="font-bold">E-mail</h3>
+                    <h3 className="font-medium">E-mail</h3>
                     <p className="text-muted-foreground">
                       <a
                         href="mailto:advogadosfmf@gmail.com"
@@ -432,7 +426,7 @@ export default function Home() {
                 <Link href="/contato">Entre em Contato</Link>
               </Button>
             </div>
-            <div className="h-[420px] overflow-hidden rounded-2xl border border-border/70 bg-gray-200 shadow-sm">
+            <div className="h-[420px] overflow-hidden rounded-sm border border-border/70 bg-gray-200">
               <iframe
                 src="https://maps.google.com/maps?q=R.%20Em%C3%ADliano%20Ramos%2C%20490%2C%20Centro%2C%20Lages%2C%20SC&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 width="100%"
