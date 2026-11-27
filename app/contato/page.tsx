@@ -86,8 +86,8 @@ export default function ContatoPage() {
           priority
         />
         <div className="hero-overlay absolute inset-0" />
-        <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
-          <h1 className="mb-4 animate-fade-in-up text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+        <div className="container ed-hero relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
+          <h1 className="mb-4 animate-fade-in-up text-4xl font-medium tracking-[-0.035em] sm:text-5xl md:text-6xl">
             Fale com Advogados em Lages - SC
           </h1>
           <p className="max-w-2xl animate-fade-in-up text-lg delay-100">
@@ -102,7 +102,7 @@ export default function ContatoPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
-              <h2 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl">
+              <h2 className="mb-8 text-3xl font-medium tracking-[-0.035em] sm:text-4xl">
                 Informações de Contato
               </h2>
 
@@ -112,13 +112,13 @@ export default function ContatoPage() {
                   return (
                     <Card
                       key={item.title}
-                      className="border-border/70 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                      className="border-border/70 bg-white transition-all duration-300 hover:border-foreground"
                     >
                       <CardContent className="p-5">
-                        <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-primary">
+                        <div className="mb-3 flex h-10 w-10 items-center justify-center border border-foreground/20 text-foreground">
                           <Icon size={18} />
                         </div>
-                        <h3 className="mb-1 text-lg font-bold text-primary">
+                        <h3 className="mb-1 text-lg font-medium text-primary">
                           {item.title}
                         </h3>
                         <p className="text-sm text-muted-foreground">
@@ -130,14 +130,14 @@ export default function ContatoPage() {
                 })}
               </div>
 
-              <div className="mb-8 flex flex-col items-start gap-3 rounded-2xl border border-border/70 bg-slate-50 p-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mb-8 flex flex-col items-start gap-3 rounded-sm border border-border/70 bg-muted p-5 sm:flex-row sm:items-center sm:justify-between">
                 <p className="font-medium">
                   Prefere agilidade? Chame no WhatsApp e fale direto com a
                   equipe.
                 </p>
                 <Button
                   asChild
-                  className="shrink-0 gap-2 bg-green-500 hover:bg-green-600"
+                  className="shrink-0 gap-2 bg-primary text-primary-foreground hover:bg-primary/85"
                 >
                   <a
                     href={whatsappUrl(
@@ -153,10 +153,10 @@ export default function ContatoPage() {
               </div>
 
               <div>
-                <h3 className="mb-4 text-xl font-bold text-primary">
+                <h3 className="mb-4 text-xl font-medium text-primary">
                   Localização
                 </h3>
-                <div className="h-[320px] overflow-hidden rounded-2xl border border-border/70 bg-gray-200 shadow-sm">
+                <div className="h-[320px] overflow-hidden rounded-sm border border-border/70 bg-gray-200">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3530.9734934629093!2d-50.3254032!3d-27.817683699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e26a5287cfc89b%3A0x7f3313a1ed09b869!2sR.%20Em%C3%ADliano%20Ramos%2C%20490%20-%20Centro%2C%20Lages%20-%20SC%2C%2088502-216!5e0!3m2!1spt-BR!2sbr!4v1715984812545!5m2!1spt-BR!2sbr"
                     width="100%"

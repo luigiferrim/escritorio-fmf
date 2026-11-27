@@ -52,24 +52,25 @@ const Navbar = () => {
     <header
       className={`sticky top-0 z-50 w-full backdrop-blur transition-all duration-300 ${
         scrolled
-          ? "border-b bg-white/95 shadow-sm"
-          : "border-b border-transparent bg-white/90"
+          ? "border-b border-foreground/15 bg-background/95"
+          : "border-b border-transparent bg-background/90"
       }`}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link
           href="/"
           className="flex items-center gap-2 transition-opacity hover:opacity-80"
           onClick={closeMenu}
         >
           <Image
-            src="/logo.png"
+            src="/logo-wordmark.png"
             alt="Logo Ferri, Maines & Fernandes, advogados em Lages - SC"
-            width={40}
-            height={40}
-            className="h-10 w-10"
+            width={609}
+            height={314}
+            priority
+            className="h-11 w-auto"
           />
-          <span className="text-xl font-bold">Ferri, Maines &amp; Fernandes</span>
+          <span className="sr-only">Ferri, Maines &amp; Fernandes</span>
         </Link>
 
         <nav className="hidden md:flex md:items-center md:gap-7">
@@ -79,13 +80,13 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-sm font-medium transition-colors hover:text-primary ${
-                  active ? "text-primary" : "text-foreground/80"
+                className={`mono-label relative transition-colors hover:text-foreground ${
+                  active ? "text-foreground" : "text-muted-foreground"
                 }`}
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 rounded-full bg-primary transition-all ${
+                  className={`absolute -bottom-1.5 left-0 h-px bg-foreground transition-all ${
                     active ? "w-full" : "w-0"
                   }`}
                 />
@@ -98,8 +99,8 @@ const Navbar = () => {
               onClick={() => setAreasOpen((v) => !v)}
               aria-expanded={areasOpen}
               aria-haspopup="true"
-              className={`relative flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary ${
-                areasActive ? "text-primary" : "text-foreground/80"
+              className={`mono-label relative flex items-center gap-1 transition-colors hover:text-foreground ${
+                areasActive ? "text-foreground" : "text-muted-foreground"
               }`}
             >
               Áreas de Atuação
@@ -108,13 +109,13 @@ const Navbar = () => {
                 className={`transition-transform ${areasOpen ? "rotate-180" : ""}`}
               />
               <span
-                className={`absolute -bottom-1 left-0 h-0.5 rounded-full bg-primary transition-all ${
+                className={`absolute -bottom-1.5 left-0 h-px bg-foreground transition-all ${
                   areasActive ? "w-full" : "w-0"
                 }`}
               />
             </button>
             {areasOpen ? (
-              <div className="absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 rounded-xl border border-border/70 bg-white p-2 shadow-lg">
+              <div className="absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 rounded-sm border border-foreground/15 bg-card p-2 shadow-sm">
                 {areas.map((area) => (
                   <Link
                     key={area.slug}
@@ -147,13 +148,13 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-sm font-medium transition-colors hover:text-primary ${
-                  active ? "text-primary" : "text-foreground/80"
+                className={`mono-label relative transition-colors hover:text-foreground ${
+                  active ? "text-foreground" : "text-muted-foreground"
                 }`}
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 rounded-full bg-primary transition-all ${
+                  className={`absolute -bottom-1.5 left-0 h-px bg-foreground transition-all ${
                     active ? "w-full" : "w-0"
                   }`}
                 />
@@ -172,7 +173,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`overflow-hidden border-t bg-white md:hidden ${
+        className={`overflow-hidden border-t bg-background md:hidden ${
           isMenuOpen ? "max-h-96 overflow-y-auto" : "max-h-0 border-t-0"
         } transition-[max-height] duration-300 ease-in-out`}
       >

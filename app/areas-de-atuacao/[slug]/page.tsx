@@ -135,8 +135,8 @@ export default async function AreaPage({ params }: Props) {
           priority
         />
         <div className="hero-overlay absolute inset-0" />
-        <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
-          <h1 className="mb-4 animate-fade-in-up text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+        <div className="container ed-hero relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
+          <h1 className="mb-4 animate-fade-in-up text-3xl font-medium tracking-[-0.035em] sm:text-4xl md:text-5xl">
             {area.h1}
           </h1>
           <p className="max-w-2xl animate-fade-in-up text-lg delay-100">
@@ -167,7 +167,7 @@ export default async function AreaPage({ params }: Props) {
 
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-3xl space-y-4 text-center">
+          <div className="ed-cta space-y-4">
             {area.intro.map((paragraph, i) => (
               <p
                 key={i}
@@ -176,8 +176,8 @@ export default async function AreaPage({ params }: Props) {
                 {paragraph}
               </p>
             ))}
-            <div className="flex flex-col justify-center gap-3 pt-4 sm:flex-row">
-              <Button asChild size="lg" className="gap-2 bg-green-500 hover:bg-green-600">
+            <div className="flex flex-col gap-3 pt-4 sm:flex-row">
+              <Button asChild size="lg" className="gap-2 bg-primary text-primary-foreground hover:bg-primary/85">
                 <a
                   href={whatsappUrl(area.cta.whatsappMessage, area.whatsapp)}
                   target="_blank"
@@ -201,7 +201,7 @@ export default async function AreaPage({ params }: Props) {
           className={`py-16 ${sectionIndex % 2 === 0 ? "section-wash" : ""}`}
         >
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="mb-10 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="ed-title">
               {section.h2}
             </h2>
             {section.paragraphs ? (
@@ -221,10 +221,10 @@ export default async function AreaPage({ params }: Props) {
                 {section.items.map((item) => (
                   <Card
                     key={item.h3}
-                    className="border-border/70 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                    className="border-border/70 bg-white transition-all duration-300 hover:border-foreground"
                   >
                     <CardContent className="p-6">
-                      <h3 className="mb-3 text-xl font-bold">{item.h3}</h3>
+                      <h3 className="mb-3 text-xl font-medium">{item.h3}</h3>
                       <p className="leading-relaxed text-muted-foreground">
                         {item.text}
                       </p>
@@ -239,18 +239,18 @@ export default async function AreaPage({ params }: Props) {
 
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="mb-10 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="ed-title">
             Perguntas Frequentes
           </h2>
-          <div className="mx-auto max-w-3xl space-y-3">
+          <div className="border-t border-border md:ml-[12rem]">
             {area.faq.map((item, i) => (
               <details
                 key={i}
-                className="group rounded-xl border border-border/70 bg-white p-5 transition-all open:shadow-sm"
+                className="group border-b border-border py-6"
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold marker:hidden [&::-webkit-details-marker]:hidden">
                   {item.q}
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent text-primary transition-transform group-open:rotate-45">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center border border-foreground/25 text-foreground transition-transform group-open:rotate-45">
                     <svg
                       width="14"
                       height="14"
@@ -279,10 +279,10 @@ export default async function AreaPage({ params }: Props) {
       {area.related.length > 0 ? (
         <section className="section-wash py-12">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="mb-6 text-center text-2xl font-bold tracking-tight">
+            <h2 className="mono-label mb-6 text-muted-foreground">
               Veja também
             </h2>
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap gap-3">
               {area.related.map((related) => (
                 <Button key={related.slug} asChild variant="outline">
                   <Link
@@ -300,16 +300,16 @@ export default async function AreaPage({ params }: Props) {
 
       <section className="bg-primary py-20 text-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          <div className="ed-cta">
+            <h2 className="ed-title on-dark">
               {area.cta.title}
             </h2>
             <p className="mb-8 text-lg">{area.cta.text}</p>
-            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <div className="flex flex-col gap-3 sm:flex-row">
               <Button
                 asChild
                 size="lg"
-                className="gap-2 bg-green-500 text-white hover:bg-green-600"
+                className="gap-2 bg-white text-foreground hover:bg-white/90"
               >
                 <a
                   href={whatsappUrl(area.cta.whatsappMessage, area.whatsapp)}

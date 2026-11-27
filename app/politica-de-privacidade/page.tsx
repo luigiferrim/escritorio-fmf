@@ -18,7 +18,7 @@ export default function PoliticaDePrivacidadePage() {
     <div className="flex flex-col">
       <section className="bg-primary py-16 text-white">
         <div className="container mx-auto px-4 text-center md:px-6">
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h1 className="text-3xl font-medium tracking-[-0.035em] sm:text-4xl">
             Política de Privacidade
           </h1>
           <p className="mt-3 text-lg text-white/90">
@@ -40,7 +40,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold tracking-tight">
+            <h2 className="text-2xl font-medium tracking-[-0.035em]">
               1. Dados que coletamos
             </h2>
             <p className="leading-relaxed text-muted-foreground">
@@ -53,7 +53,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold tracking-tight">
+            <h2 className="text-2xl font-medium tracking-[-0.035em]">
               2. Finalidade do tratamento
             </h2>
             <p className="leading-relaxed text-muted-foreground">
@@ -65,7 +65,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold tracking-tight">
+            <h2 className="text-2xl font-medium tracking-[-0.035em]">
               3. Compartilhamento e operadores
             </h2>
             <p className="leading-relaxed text-muted-foreground">
@@ -78,7 +78,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold tracking-tight">
+            <h2 className="text-2xl font-medium tracking-[-0.035em]">
               4. Sigilo profissional
             </h2>
             <p className="leading-relaxed text-muted-foreground">
@@ -90,7 +90,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold tracking-tight">
+            <h2 className="text-2xl font-medium tracking-[-0.035em]">
               5. Armazenamento e segurança
             </h2>
             <p className="leading-relaxed text-muted-foreground">
@@ -102,7 +102,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold tracking-tight">
+            <h2 className="text-2xl font-medium tracking-[-0.035em]">
               6. Seus direitos
             </h2>
             <p className="leading-relaxed text-muted-foreground">
@@ -114,7 +114,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold tracking-tight">
+            <h2 className="text-2xl font-medium tracking-[-0.035em]">
               7. Contato do responsável
             </h2>
             <p className="leading-relaxed text-muted-foreground">
@@ -125,7 +125,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold tracking-tight">
+            <h2 className="text-2xl font-medium tracking-[-0.035em]">
               8. Atualizações
             </h2>
             <p className="leading-relaxed text-muted-foreground">

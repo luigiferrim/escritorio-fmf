@@ -116,8 +116,8 @@ export default function AdvogadosPage() {
           priority
         />
         <div className="hero-overlay absolute inset-0" />
-        <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
-          <h1 className="mb-4 animate-fade-in-up text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+        <div className="container ed-hero relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
+          <h1 className="mb-4 animate-fade-in-up text-4xl font-medium tracking-[-0.035em] sm:text-5xl md:text-6xl">
             Advogados em Lages
           </h1>
           <p className="max-w-2xl animate-fade-in-up text-lg delay-100">
@@ -133,12 +133,12 @@ export default function AdvogadosPage() {
             {advogados.map((advogado, idx) => (
               <div
                 key={advogado.id}
-                className={`grid gap-8 rounded-3xl border border-border/70 bg-white p-6 shadow-sm md:grid-cols-5 md:items-center md:p-8 ${
+                className={`grid gap-8 rounded-sm border border-border/70 bg-white p-6 md:grid-cols-5 md:items-center md:p-8 ${
                   idx % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
                 }`}
               >
                 <div className="md:col-span-2">
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-border/70 shadow-sm">
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-sm border border-border/70">
                     <Image
                       src={advogado.foto || "/placeholder.svg"}
                       alt={advogado.alt}
@@ -150,10 +150,10 @@ export default function AdvogadosPage() {
                 </div>
 
                 <div className="md:col-span-3">
-                  <span className="mb-3 inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold text-primary">
+                  <span className="mono-label mb-3 inline-block text-muted-foreground">
                     {advogado.cargo}
                   </span>
-                  <h2 className="mb-3 text-3xl font-bold tracking-tight text-primary md:text-4xl">
+                  <h2 className="mb-3 text-3xl font-medium tracking-[-0.035em] text-primary md:text-4xl">
                     {advogado.nome}
                   </h2>
                   <p className="mb-6 text-lg text-muted-foreground">
@@ -161,9 +161,9 @@ export default function AdvogadosPage() {
                   </p>
 
                   <div className="mb-6 grid gap-3 sm:grid-cols-3">
-                    <Card className="border-border/70 bg-slate-50">
+                    <Card className="border-border/70 bg-muted">
                       <CardContent className="flex items-start gap-3 p-4">
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent text-primary">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center border border-foreground/20 text-foreground">
                           <Briefcase size={16} />
                         </div>
                         <div>
@@ -176,9 +176,9 @@ export default function AdvogadosPage() {
                         </div>
                       </CardContent>
                     </Card>
-                    <Card className="border-border/70 bg-slate-50">
+                    <Card className="border-border/70 bg-muted">
                       <CardContent className="flex items-start gap-3 p-4">
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent text-primary">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center border border-foreground/20 text-foreground">
                           <Calendar size={16} />
                         </div>
                         <div>
@@ -191,9 +191,9 @@ export default function AdvogadosPage() {
                         </div>
                       </CardContent>
                     </Card>
-                    <Card className="border-border/70 bg-slate-50">
+                    <Card className="border-border/70 bg-muted">
                       <CardContent className="flex items-start gap-3 p-4">
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent text-primary">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center border border-foreground/20 text-foreground">
                           <BadgeCheck size={16} />
                         </div>
                         <div>
@@ -208,8 +208,8 @@ export default function AdvogadosPage() {
                     </Card>
                   </div>
 
-                  <div className="mb-6 rounded-2xl bg-slate-50 p-5">
-                    <h3 className="mb-2 text-xl font-bold text-primary">
+                  <div className="mb-6 rounded-sm bg-muted p-5">
+                    <h3 className="mb-2 text-xl font-medium text-primary">
                       Biografia
                     </h3>
                     <p className="leading-relaxed text-muted-foreground">
@@ -221,7 +221,7 @@ export default function AdvogadosPage() {
                     <Button
                       asChild
                       size="lg"
-                      className="gap-2 bg-green-500 hover:bg-green-600"
+                      className="gap-2 bg-primary text-primary-foreground hover:bg-primary/85"
                     >
                       <a
                         href={whatsappUrl(
@@ -251,8 +251,8 @@ export default function AdvogadosPage() {
 
       <section className="section-wash py-20">
         <div className="container relative mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-primary sm:text-4xl md:text-5xl">
+          <div className="ed-cta">
+            <h2 className="ed-title">
               Precisa de Assessoria Jurídica em Lages?
             </h2>
             <p className="mb-8 text-lg text-muted-foreground">

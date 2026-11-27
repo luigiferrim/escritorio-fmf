@@ -32,8 +32,8 @@ export default function SobrePage() {
           priority
         />
         <div className="hero-overlay absolute inset-0" />
-        <div className="container relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
-          <h1 className="mb-4 animate-fade-in-up text-4xl font-bold tracking-tight sm:text-5xl">
+        <div className="container ed-hero relative z-10 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-6">
+          <h1 className="mb-4 animate-fade-in-up text-4xl font-medium tracking-[-0.035em] sm:text-5xl">
             Sobre o Ferri, Maines &amp; Fernandes
           </h1>
           <p className="max-w-2xl animate-fade-in-up text-lg delay-100">
@@ -47,7 +47,7 @@ export default function SobrePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <h2 className="mb-6 text-3xl font-bold tracking-tight">
+              <h2 className="mb-6 text-3xl font-medium tracking-[-0.035em]">
                 Nossa História
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
@@ -77,7 +77,7 @@ export default function SobrePage() {
                 </p>
               </div>
             </div>
-            <div className="relative h-[420px] overflow-hidden rounded-2xl border border-border/70 shadow-sm">
+            <div className="relative h-[420px] overflow-hidden rounded-sm border border-border/70">
               <Image
                 src="/escritorio.jpg"
                 alt="Equipe do escritório Ferri, Maines & Fernandes em Lages - SC"
@@ -91,7 +91,7 @@ export default function SobrePage() {
 
       <section className="section-wash py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">
+          <h2 className="ed-title">
             Missão, Visão e Valores
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
@@ -116,13 +116,13 @@ export default function SobrePage() {
               return (
                 <Card
                   key={item.title}
-                  className="border-border/70 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  className="border-border/70 bg-white transition-all duration-300 hover:border-foreground"
                 >
-                  <CardContent className="p-7 text-center">
-                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary">
+                  <CardContent className="p-7 text-left">
+                    <div className="mb-4 flex h-12 items-center justify-start text-foreground">
                       <Icon size={24} />
                     </div>
-                    <h3 className="mb-2 text-xl font-bold">{item.title}</h3>
+                    <h3 className="mb-2 text-xl font-medium">{item.title}</h3>
                     <p className="leading-relaxed text-muted-foreground">
                       {item.text}
                     </p>
@@ -136,7 +136,7 @@ export default function SobrePage() {
 
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">
+          <h2 className="ed-title">
             Nossos Diferenciais
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -170,13 +170,13 @@ export default function SobrePage() {
               return (
                 <Card
                   key={index}
-                  className="border-border/70 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  className="border-border/70 bg-white transition-all duration-300 hover:border-foreground"
                 >
                   <CardContent className="p-6">
-                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-accent text-primary">
+                    <div className="mb-4 flex h-10 items-center justify-start text-foreground">
                       <Icon size={20} />
                     </div>
-                    <h3 className="mb-2 text-xl font-bold">
+                    <h3 className="mb-2 text-xl font-medium">
                       {diferencial.title}
                     </h3>
                     <p className="leading-relaxed text-muted-foreground">
@@ -192,8 +192,8 @@ export default function SobrePage() {
 
       <section className="section-wash py-16">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-2xl font-bold tracking-tight sm:text-3xl">
+          <div className="ed-cta">
+            <h2 className="ed-title">
               Compromisso com a Advocacia Ética
             </h2>
             <p className="text-lg leading-relaxed text-muted-foreground">
@@ -208,15 +208,15 @@ export default function SobrePage() {
 
       <section className="bg-primary py-20 text-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          <div className="ed-cta">
+            <h2 className="ed-title on-dark">
               Precisa de um Advogado em Lages?
             </h2>
             <p className="mb-8 text-lg">
               Agende uma consulta presencial ou por videochamada e conheça como
               podemos ajudar você ou a sua empresa.
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <div className="flex flex-col gap-3 sm:flex-row">
               <Button
                 asChild
                 size="lg"
@@ -228,7 +228,7 @@ export default function SobrePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-primary hover:bg-white/90"
+                className="bg-white text-primary hover:bg-background/90"
               >
                 <Link href="/advogados">Conheça Nossa Equipe</Link>
               </Button>

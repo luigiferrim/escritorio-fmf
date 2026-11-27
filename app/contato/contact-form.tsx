@@ -127,7 +127,7 @@ export default function ContactForm() {
   };
 
   return (
-    <Card className="overflow-hidden border-border/70 bg-white shadow-lg">
+    <Card className="overflow-hidden border-border/70 bg-white">
       {RECAPTCHA_SITE_KEY ? (
         <Script
           src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
@@ -135,7 +135,7 @@ export default function ContactForm() {
         />
       ) : null}
       <CardContent className="p-6 md:p-8">
-        <h2 className="mb-2 text-2xl font-bold text-primary md:text-3xl">
+        <h2 className="mb-2 text-2xl font-medium text-primary md:text-3xl">
           Envie sua Mensagem
         </h2>
         <p className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
@@ -145,7 +145,7 @@ export default function ContactForm() {
         </p>
 
         {submitSuccess ? (
-          <div className="flex items-start gap-3 rounded-xl border border-green-200 bg-green-50 p-5 text-green-800">
+          <div className="flex items-start gap-3 rounded-sm border border-green-200 bg-green-50 p-5 text-green-800">
             <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
             <div>
               <p className="font-semibold">Mensagem enviada com sucesso!</p>
